@@ -3,10 +3,14 @@
         <head>
             <meta charset="UTF-8">
             <title>Module 1, assignment 2</title>
-            <script src="1.2.js" defer></script>
         </head>
         <body>
                 <h1>Module 1, assignment 2</h1>
                 <p id="target"></p>
+                <script>
+                'use strict';
+                const name = prompt('Type your name: ')
+                document.querySelector("#target").innerHTML = "Hello, " + name + "!";
+            </script>
         </body>
 </html>
