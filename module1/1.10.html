@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Module 1, assignment 10</title>
-            <script src="1.10.js" defer></script>
-        </head>
-        <body>
-                <h1>Module 1, assignment 10</h1>
-                <p id="target"></p>
-        </body>
+<head>
+<meta charset="UTF-8">
+<title>Module 1, assignment 10</title>
+</head>
+<body>
+<h1>Module 1, assignment 10</h1>
+<p id="target"></p>
+<script>
+    var numDice = parseInt(prompt("Enter the number of dice:"));
+    var desiredSum = parseInt(prompt("Enter the desired sum of the dice:"));
+    var simulationCount = 10000;
+
+    if (!isNaN(numDice) && numDice > 0 && !isNaN(desiredSum) && desiredSum >= numDice && desiredSum <= numDice * 6) {
+        var successCount = 0;
+
+        for (var i = 0; i < simulationCount; i++) {
+            var sum = 0;
+
+            for (var j = 0; j < numDice; j++) {
+                var rollResult = Math.floor(Math.random() * 6) + 1;
+                sum += rollResult;
+            }
+
+            if (sum === desiredSum) {
+                successCount++;
+            }
+        }
+
+        var probability = (successCount / simulationCount) * 100;
+        document.write("Probability to get sum " + desiredSum + " with " + numDice + " dice is approximately " + probability.toFixed(2) + "%");
+    } else {
+        document.write("Invalid input. Please enter valid numbers.");
+    }
+</script>
+</body>
 </html>

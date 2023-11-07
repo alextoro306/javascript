@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Module 1, assignment 7</title>
-            <script src="1.7.js" defer></script>
-        </head>
-        <body>
-                <h1>Module 1, assignment 7</h1>
-                <p id="target"></p>
-        </body>
+<head>
+<meta charset="UTF-8">
+<title>Module 1, assignment 7</title>
+</head>
+<body>
+<h1>Module 1, assignment 7</h1>
+<p id="target"></p>
+<script>
+    var numDice = parseInt(prompt("Enter the number of dice rolls:"));
+    var sum = 0;
+
+    if (!isNaN(numDice) && numDice > 0) {
+        for (var i = 0; i < numDice; i++) {
+            var rollResult = Math.floor(Math.random() * 6) + 1;
+            sum += rollResult;
+        }
+
+        console.log("Sum of " + numDice + " dice rolls is: " + sum);
+    } else {
+        console.log("Invalid input. Please enter a valid positive number of dice rolls.");
+    }
+</script>
+
+</body>
 </html>

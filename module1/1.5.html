@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Module 1, assignment 5</title>
-        </head>
-        <body>
-        <h1>Module 1, assignment 5</h1>
-        <p id="target"></p>
-        <script>
-        'use strict';
-        const vuosi = parseInt(document.getElementById('vuosiInput').value);
+<head>
+<meta charset="UTF-8">
+    <title>Module 1, assignment 5</title>
+</head>
+<body>
+    <h1>Module 1, assignment 5</h1>
+    <label for="yearInput">Enter a year: </label>
+    <input type="text" id="yearInput">
+    <button onclick="checkLeapYear()">Check</button>
+    <p id="result"></p>
 
-        if (isLeapvuosi(vuosi)) {
-        document.getElementById('tulos').innerHTML = `${vuosi} on karkausvuosi.`;
-        } else {
-        document.getElementById('tulos').innerHTML = `${vuosi} ei ole karkausvuosi.`;
+    <script>
+        function checkLeapYear() {
+            const year = parseInt(document.getElementById('yearInput').value);
+
+            if (isLeapYear(year)) {
+                document.getElementById('result').innerHTML = `${year} is a leap year.`;
+            } else {
+                document.getElementById('result').innerHTML = `${year} is not a leap year.`;
+            }
         }
 
-        if ((vuosi % 4 === 0 && vuosi % 100 !== 0) || vuosi % 400 === 0) {
-        return true;
-        } else {
-        return false;
+        function isLeapYear(year) {
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                return true;
+            } else {
+                return false;
+            }
         }
-        </script>
-        </body>
+    </script>
+</body>
 </html>

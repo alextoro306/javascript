@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Module 1, assignment 8</title>
-            <script src="1.8.js" defer></script>
-        </head>
-        <body>
-                <h1>Module 1, assignment 8</h1>
-                <p id="target"></p>
-        </body>
+<head>
+<meta charset="UTF-8">
+<title>Module 1, assignment 8</title>
+</head>
+<body>
+<h1>Module 1, assignment 8</h1>
+<p id="target"></p>
+<script>
+    var startYear = parseInt(prompt("Enter the start year:"));
+    var endYear = parseInt(prompt("Enter the end year:"));
+
+    if (!isNaN(startYear) && !isNaN(endYear) && startYear <= endYear) {
+        document.write("<ul>");
+
+        for (var year = startYear; year <= endYear; year++) {
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                document.write("<li>" + year + "</li>");
+            }
+        }
+
+        document.write("</ul>");
+    } else {
+        document.write("Invalid input. Please enter valid years.");
+    }
+</script>
+</body>
 </html>
