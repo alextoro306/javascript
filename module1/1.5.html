@@ -3,10 +3,25 @@
         <head>
             <meta charset="UTF-8">
             <title>Module 1, assignment 5</title>
-            <script src="1.5.js" defer></script>
         </head>
         <body>
-                <h1>Module 1, assignment 5</h1>
-                <p id="target"></p>
+        <h1>Module 1, assignment 5</h1>
+        <p id="target"></p>
+        <script>
+        'use strict';
+        const vuosi = parseInt(document.getElementById('vuosiInput').value);
+
+        if (isLeapvuosi(vuosi)) {
+        document.getElementById('tulos').innerHTML = `${vuosi} on karkausvuosi.`;
+        } else {
+        document.getElementById('tulos').innerHTML = `${vuosi} ei ole karkausvuosi.`;
+        }
+
+        if ((vuosi % 4 === 0 && vuosi % 100 !== 0) || vuosi % 400 === 0) {
+        return true;
+        } else {
+        return false;
+        }
+        </script>
         </body>
 </html>
